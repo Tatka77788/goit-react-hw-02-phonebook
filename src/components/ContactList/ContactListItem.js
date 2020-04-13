@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styles from "./ContactList.module.css";
 
 const ContactListItem = ({ contactListItem, handleChange }) => {
@@ -19,4 +20,13 @@ const ContactListItem = ({ contactListItem, handleChange }) => {
     </li>
   );
 };
+ContactListItem.propTypes = {
+  contactListItem: PropTypes.arrayOf(
+    PropTypes.exact({
+      number: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+};
+
 export default ContactListItem;

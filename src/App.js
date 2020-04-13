@@ -58,18 +58,18 @@ class App extends Component {
 
     const isMatch = this.checkForMatch();
 
-    if (!isMatch) {
+    if (isMatch) { alert(`${this.state.name} is already in contacts.`);
+     
+    } else {
       this.setState((prevState) => ({
         contacts: [...prevState.contacts, newContact],
         name: "",
         number: "",
       }));
-    } else {
-      alert(`${this.state.name} is already in contacts.`);
     }
   };
 
-  handleDeleteSubmit = (e) =>
+  handleDelete = (e) =>
     this.setState({
       contacts: this.state.contacts.filter((el) => el.id !== e.target.id),
     });
@@ -102,7 +102,7 @@ class App extends Component {
           <Filter handleChangeFilter={this.getFilterValue} />
           <ContactList
             contactList={filteredContacts}
-            handleChange={this.handleDeleteSubmit}
+            handleChange={this.handleDelete}
           />
         </Section>
       </>
