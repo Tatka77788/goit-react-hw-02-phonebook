@@ -1,35 +1,57 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styles from "./ContactForm.module.css";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import styles from './ContactForm.module.css';
+import inputId from '../../util/shortid';
 
-const ContactForm = ({ handleSubmit, handleChange, name, number }) => (
-  <form className={styles.form} onSubmit={handleSubmit}>
-    <h3 className={styles.h3}>Name</h3>
-    <input
-      className={styles.input}
-      type="text"
-      name="name"
-      onChange={handleChange}
-      value={name}
-    />
-    <h3 className={styles.h3}>Number</h3>
-    <input
-      className={styles.input}
-      type="text"
-      name="number"
-      onChange={handleChange}
-      value={number}
-    />
-    <button className={styles.submit} type="submit">
-      Add contact
-    </button>
-  </form>
-);
+export default class ContactFrom extends Component {
+	state = { name: '', number: '' };
 
-ContactForm.propTypes = {
-  handleChange: PropTypes.func,
-  handleSubmit: PropTypes.func,
-  number: PropTypes.number.isRequired,
-  name: PropTypes.string.isRequired,
-};
-export default ContactForm;
+	static propTypes = {
+		handleSubmit: PropTypes.func.isRequired,
+	};
+
+	handleChange = e => {
+		const { name, value } = e.target;
+		this.setState({ [name]: value });
+	};
+
+	reset = e => {
+		e.preventDefault();
+		this.props.handleSubmit(e);
+		this.setState({ name: '', number: '' });
+	};
+
+	render() {
+		const { name, number } = this.state;
+		return (
+			<form className={styles.form} onSubmit={this.reset}>
+				<h3 className={styles.h3} htmlFor={inputId.name}>
+					Name{' '}
+				</h3>
+				<input
+					type="text"
+					value={name}
+					onChange={this.handleChange}
+					id={inputId.name}
+					name="name"
+					className={styles.input}
+				/>
+
+				<h3 className={styles.h3} htmlFor={inputId.number}>
+					Number
+				</h3>
+				<input
+					type="text"
+					value={number}
+					onChange={this.handleChange}
+					id={inputId.number}
+					name="number"
+					className={styles.input}
+				/>
+				<button type="submit" className={styles.submit}>
+					Add contact
+				</button>
+			</form>
+		);
+	}
+}
