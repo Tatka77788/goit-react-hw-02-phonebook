@@ -23,25 +23,6 @@ const Filter = ({ length, filter, handleChangeFilter }) => {
 	);
 };
 
-/*const Filter = ({ length, filter, handleChange }) => {
-  return (
-    <>
-      {length > 1 && (
-        <label className={Styles.findContact} htmlFor={inputId.filter}>
-          Find contacts by name
-          <input
-            type="text"
-            id={inputId.filter}
-            value={filter}
-            onChange={handleChange}
-            name="filter"
-          />
-        </label>
-      )}
-    </>
-  );
-};*/
-
 Filter.propTypes = {
 	handleChangeFilter: PropTypes.func.isRequired,
 };
