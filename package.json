@@ -11,6 +11,7 @@
     "lint": "^0.7.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-input-mask": "^2.0.4",
     "react-scripts": "3.4.1",
     "shortid": "^2.2.15",
     "uuid": "^7.0.3"
@@ -24,7 +25,8 @@
     "deploy": "gh-pages -d build",
     "precommit": "lint-staged",
     "prettier": "prettier --single-quote --use-tabs --trailing-comma es5 --write \"src/**/*.js\"",
-    "eslint": "eslint --format codeframe ./"
+    "eslint": "eslint --format codeframe ./",
+    "lint": "tslint -c tslint.json 'src/**/*.ts' 'tests/**/*.spec.ts'" 
   },
   "lint-staged": {
     "src/**/js/*.js": [

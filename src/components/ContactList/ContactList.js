@@ -1,23 +1,26 @@
+/* eslint-disable react/jsx-filename-extension */
+/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
-import ContactListItem from './ContactListItem';
 import PropTypes from 'prop-types';
+import ContactListItem from './ContactListItem';
 
 const ContactList = ({ contactList, handleRemove }) => {
-	return (
-		<ul>
-			{contactList.map(el => (
-				<ContactListItem
-					key={el.id}
-					contactListItem={el}
-					handleRemove={handleRemove}
-				/>
-			))}
-		</ul>
-	);
+  return (
+    <ul>
+      {contactList.map(el => (
+        <ContactListItem
+          key={el.id}
+          contactListItem={el}
+          handleRemove={handleRemove}
+        />
+      ))}
+    </ul>
+  );
 };
 
 ContactList.propTypes = {
-	contactList: PropTypes.array.isRequired,
-	handleRemove: PropTypes.func.isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
+  contactList: PropTypes.array.isRequired,
+  handleRemove: PropTypes.func.isRequired,
 };
 export default ContactList;
