@@ -19,9 +19,9 @@ module.exports = {
       "prettier/prettier": ["error"],
       "jsx-quotes": [
         1,
-        "prefer-double"
-    ]
-
+        "prefer-double"б
+    ],
+    "eslint-disable react/jsx-filename-extension"
     }
   };
   

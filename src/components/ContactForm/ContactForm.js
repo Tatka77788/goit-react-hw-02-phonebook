@@ -1,9 +1,3 @@
-/* eslint-disable react/jsx-one-expression-per-line */
-/* eslint-disable import/no-extraneous-dependencies */
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable react/jsx-filename-extension */
-/* eslint-disable react/static-property-placement */
-/* eslint-disable react/state-in-constructor */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styles from './ContactForm.module.css';

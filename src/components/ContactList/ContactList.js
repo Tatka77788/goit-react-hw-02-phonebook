@@ -1,5 +1,3 @@
-/* eslint-disable react/jsx-filename-extension */
-/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import PropTypes from 'prop-types';
 import ContactListItem from './ContactListItem';
@@ -19,7 +17,6 @@ const ContactList = ({ contactList, handleRemove }) => {
 };
 
 ContactList.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
   contactList: PropTypes.array.isRequired,
   handleRemove: PropTypes.func.isRequired,
 };
