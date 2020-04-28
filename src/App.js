@@ -1,3 +1,6 @@
+/* eslint-disable react/no-access-state-in-setstate */
+/* eslint-disable react/no-unused-state */
+/* eslint-disable react/state-in-constructor */
 import React, { Component } from 'react';
 import shortid from 'shortid';
 import Section from './components/Section/Section';
@@ -41,6 +44,7 @@ class App extends Component {
 
   handleDelete = e =>
     this.setState({
+      // eslint-disable-next-line react/destructuring-assignment
       contacts: this.state.contacts.filter(el => el.id !== e.target.id),
     });
 

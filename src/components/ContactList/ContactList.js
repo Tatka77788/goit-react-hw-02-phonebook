@@ -17,7 +17,7 @@ const ContactList = ({ contactList, handleRemove }) => {
 };
 
 ContactList.propTypes = {
-  contactList: PropTypes.array.isRequired,
+  contactList: PropTypes.string.isRequired,
   handleRemove: PropTypes.func.isRequired,
 };
 export default ContactList;

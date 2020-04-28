@@ -1,3 +1,6 @@
+/* eslint-disable react/jsx-one-expression-per-line */
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable react/state-in-constructor */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styles from './ContactForm.module.css';
@@ -6,6 +9,7 @@ import inputId from '../../util/shortid';
 export default class ContactFrom extends Component {
   state = { name: '', number: '' };
 
+  // eslint-disable-next-line react/static-property-placement
   static propTypes = {
     handleSubmit: PropTypes.func.isRequired,
   };
