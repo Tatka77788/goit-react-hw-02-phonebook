@@ -28,7 +28,9 @@
     "precommit": "lint-staged",
     "prettier": "prettier --single-quote --use-tabs --trailing-comma es5 --write \"src/**/*.js\"",
     "eslint": "eslint --format codeframe ./", 
-    "lint": "tslint -c tslint.json 'src/**/*.ts' 'tests/**/*.spec.ts'" 
+    "lint:format": "prettier src/**/**/*.js --write",
+    "lint:fix": "eslint src/**/**/*.js --fix",
+    "lint": "eslint src/**/**/*.js"
   },
   "lint-staged": {
     "src/**/js/*.js": [
