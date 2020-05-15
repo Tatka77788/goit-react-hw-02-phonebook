@@ -1,3 +1,4 @@
+/* eslint-disable react/forbid-prop-types */
 /* eslint-disable react/prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -18,9 +19,7 @@ const ContactList = ({ contactList, handleRemove }) => {
 };
 
 ContactList.propTypes = {
-  contactList: PropTypes.string.shape({
-    id: PropTypes.string,
-  }).isRequired,
+  contactList: PropTypes.arrayOf(PropTypes.object).isRequired,
   handleRemove: PropTypes.func.isRequired,
 };
 export default ContactList;
