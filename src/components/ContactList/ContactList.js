@@ -19,7 +19,9 @@ const ContactList = ({ contactList, handleRemove }) => {
 };
 
 ContactList.propTypes = {
-  contactList: PropTypes.arrayOf(PropTypes.object).isRequired,
+  contactList: PropTypes.arrayOf(
+    PropTypes.shape({ id: PropTypes.string.isRequired }),
+  ).isRequired,
   handleRemove: PropTypes.func.isRequired,
 };
 export default ContactList;
